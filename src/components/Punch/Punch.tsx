@@ -1,5 +1,6 @@
-import WebApp from "@twa-dev/sdk"
+import { MainButton } from "@twa-dev/sdk/react"
 import { IUser } from "../../interfaces"
+import WebApp from "@twa-dev/sdk"
 
 interface Props {
   user: IUser
@@ -9,18 +10,14 @@ interface Props {
 }
 
 function Punch({ user, backToUsers, punch, count }: Props) {
-  const MainButton = WebApp.MainButton
-  MainButton.setText("Выбрать другого персонажа")
-  MainButton.show()
-  MainButton.onClick(() => {
+  const clickBtnBack = () => {
     WebApp.showAlert(
       `Уже уходишь? Ты нанес ${user.namePadej} ${count} ударов!!`,
       () => {
         backToUsers()
-        MainButton.hide()
       },
     )
-  })
+  }
 
   return (
     <>
@@ -29,6 +26,7 @@ function Punch({ user, backToUsers, punch, count }: Props) {
           <img src={user.src} />
         </button>
       </div>
+      <MainButton text="Выбрать другого персонажа" onClick={clickBtnBack} />
       {/* <div>
         <button
           onClick={backToUsers}
