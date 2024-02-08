@@ -12,6 +12,7 @@
     "deploy": "yarn build && gh-pages -d dist"
   },
   "dependencies": {
+    "@twa-dev/sdk": "^7.0.0",
     "clsx": "^2.1.0",
     "prettier": "^3.2.5",
     "react": "^18.2.0",

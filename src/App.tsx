@@ -1,8 +1,5 @@
 import { useState } from "react"
-import user1 from "/images/1.png"
-import user2 from "/images/2.png"
-import user3 from "/images/3.png"
-import user4 from "/images/4.png"
+import users from "./constants/users"
 
 import "./App.css"
 
@@ -10,11 +7,11 @@ import SelectUser from "./components/SelectUser/SelectUser"
 import Punch from "./components/Punch/Punch"
 import Counter from "./components/Counter/Counter"
 import clsx from "clsx"
+import WebApp from "@twa-dev/sdk"
 
 function App() {
   const [currUserIndex, setCurrUserIndex] = useState(-1)
   const [count, setCount] = useState(0)
-  const users = [user1, user2, user3, user4]
   const clickBtnBack = () => {
     setCurrUserIndex(-1)
     setCount(0)
@@ -30,6 +27,7 @@ function App() {
       <Punch
         user={users[currUserIndex]}
         backToUsers={clickBtnBack}
+        count={count}
         punch={() => setCount((count) => count + 1)}
       />
     )
