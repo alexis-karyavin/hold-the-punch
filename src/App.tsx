@@ -9,6 +9,7 @@ import "./App.css"
 import SelectUser from "./components/SelectUser/SelectUser"
 import Punch from "./components/Punch/Punch"
 import Counter from "./components/Counter/Counter"
+import clsx from "clsx"
 
 function App() {
   const [currUserIndex, setCurrUserIndex] = useState(-1)
@@ -35,7 +36,11 @@ function App() {
 
   return (
     <div className="from-slate-800 to-slate-900 bg-gradient-to-b w-full h-full p-3 flex flex-col">
-      <h1 className="text-lg font-bold text-center">
+      <h1
+        className={clsx("text-lg font-bold text-center", {
+          "text-5xl": currUserIndex !== -1,
+        })}
+      >
         {currUserIndex !== -1 ? (
           <Counter value={count} />
         ) : (
