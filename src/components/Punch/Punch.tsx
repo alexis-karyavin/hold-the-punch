@@ -8,7 +8,7 @@ function Punch({ user, backToUsers, punch }: Props) {
   return (
     <>
       <div className="flex justify-center items-center w-full grow">
-        <button className="active:scale-95" onTouchStart={punch}>
+        <button className="active:scale-95" onClick={punch}>
           <img src={user} />
         </button>
       </div>

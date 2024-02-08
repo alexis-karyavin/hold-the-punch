@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="from-slate-800 to-slate-900 bg-gradient-to-b w-full h-full p-3 flex flex-col">
-      <h1 className="text-5xl font-bold text-center mt-10">
+      <h1 className="text-lg font-bold text-center">
         {currUserIndex !== -1 ? (
           <Counter value={count} />
         ) : (
