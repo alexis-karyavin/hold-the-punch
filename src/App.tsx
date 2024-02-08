@@ -7,7 +7,6 @@ import SelectUser from "./components/SelectUser/SelectUser"
 import Punch from "./components/Punch/Punch"
 import Counter from "./components/Counter/Counter"
 import clsx from "clsx"
-import WebApp from "@twa-dev/sdk"
 
 function App() {
   const [currUserIndex, setCurrUserIndex] = useState(-1)
